@@ -1,0 +1,95 @@
+<div class="container card shadow p-5 mt-3">
+    <h2 class="text-center">Task</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Select Columns</h3>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3 pb-4">
+            <label class="mb-4">DB/File Name  <a (click)="sortFileName()"><i class="fa fa-arrow-down" [ngClass]="{'gray': acendingFileName}"></i> <i class="fa fa-arrow-up" [ngClass]="{'gray': !acendingFileName}"></i> </a> </label>
+            <div class="column">
+                <div class="d-flex">
+                    <span class="p-2">Search</span>
+                    <input type="text" class="form-control" placeholder="Enter" [(ngModel)]="searchfile"
+                        (ngModelChange)="fileSearch()">
+                </div>
+                <select class="form-control mt-2" [(ngModel)]="selectedFileName" name="listBox" size="10">
+                    <option *ngFor="let item of fileNameList" (click)="onSelectFileName(item)">{{item.fileName}}
+                </select>
+
+
+            </div>
+        </div>
+        <div class="col-md-3 pb-4">
+            <label class="mb-4">Sheet/Table Name <a (click)="sortSheet()"><i class="fa fa-arrow-down" [ngClass]="{'gray': acendingSheets}"></i> <i class="fa fa-arrow-up" [ngClass]="{'gray': !acendingSheets}"></i> </a></label>
+            <div class="column">
+                <div class="d-flex">
+                    <span class="p-2">Search</span>
+                    <input type="text" class="form-control" placeholder="Enter" [(ngModel)]="searchSheet"
+                        (ngModelChange)="sheetSearch()">
+                </div>
+                <select class="form-control mt-2" name="listBox" size="10" [(ngModel)]="selectedSheet">
+                    <option *ngFor="let item of sheet" (click)="onSelectSheet(item)">{{item.sheetName}}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3 pb-4">
+               <div class="d-flex">
+                <label class="">Column Name </label>
+                <input type="checkbox" [checked]="isChekedAll" class="ml-93"
+                  (change)="onClickAll($event.target)"><span class="mtl-4">Select All</span>
+               </div>
+                <div>
+                   <span class="text-primary">{{selectedColumns.length}} Columns Selected</span> 
+                </div>
+            <div class="column">
+                <div class="d-flex">
+                    <span class="p-2">Search</span>
+                    <input type="text" class="form-control" [(ngModel)]="searchColumn" (ngModelChange)="columnSearch()">
+                </div>
+                <ul class="form-control mt-2" name="listBox" size="10">
+                    <!-- <li *ngIf="columns.length>0"><input type="checkbox" [checked]="isChekedAll"
+                            (change)="onClickAll($event.target)"> All</li> -->
+                    <li *ngFor="let item of columns;let index=index"> <input #checkbox
+                            (change)="onChangeCheckBox(item,$event.target,index)" type="checkbox"> {{item}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 pb-4">
+            <div class="d-flex">
+            <label class="">File Level Maping</label>
+            <input type="checkbox" [checked]="isChekedAllRules" class="ml-70"
+                            (change)="onClickAllRules($event.target)">
+                            <span class="mtl-4">Select All</span>
+                        </div>
+                        <div>
+                            <span class="text-primary">{{selectedRules.length}} Rules Selected</span> 
+                         </div>
+            <div class="column">
+                <div class="d-flex">
+                    <span class="p-2">Search</span>
+                    <input type="text" class="form-control" [(ngModel)]="searchColumn" (ngModelChange)="columnSearch()">
+                </div>
+
+                <ul class="form-control mt-2" name="listBox" size="10">
+                    <!-- <li *ngIf="ruledata.length>0"><input type="checkbox" [checked]="isChekedAllRules"
+                            (change)="onClickAllRules($event.target)"> All</li> -->
+                    <li *ngFor="let item of ruledata;let index=index"> <input #rulescheckbox
+                            (change)="onChangeCheckBoxRules(item,$event.target,index)" type="checkbox"> {{item.rule}}
+                        {{item.ruleDescription}}</li>
+                </ul>
+                <!-- <ng-select  [multiple]="true" [closeOnSelect]="false" [(ngModel)]="selectedRules">
+                    <ng-option *ngFor="let item of ruledata" [value]="item.ruleid">{{item.rule}} {{item.ruleDescription}}</ng-option>
+                 </ng-select> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-sm btn-primary mx-3" (click)="goToDQ()">Map Rule in column level</button>
+            <button class="btn btn-sm btn-primary" (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>

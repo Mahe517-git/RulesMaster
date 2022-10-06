@@ -1,0 +1,301 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "fileNameList": [
+    {
+      "id": 1,
+      "fileName": "Insurance",
+      "sheet": [
+        {
+          "id": 1,
+          "sheetName": "Insurance sheet1",
+          "columns": {
+            "id": 1,
+            "columnName": "test",
+            "Adderess": "Address Test",
+            "email": "test@gmail.com",
+            "mobile": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Insurance sheet2",
+          "columns": {
+            "id": 1,
+            "columnName": "test",
+            "Adderess": "Address Test",
+            "email": "test@gmail.com",
+            "mobile": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Insurance sheet3",
+          "columns": {
+            "id": 1,
+            "columnName": "test",
+            "Adderess": "Address Test",
+            "email": "test@gmail.com",
+            "mobile": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Insurance sheet4",
+          "columns": {
+            "id": 1,
+            "columnName": "test",
+            "Adderess": "Address Test",
+            "email": "test@gmail.com",
+            "mobile": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Insurance sheet5",
+          "columns": {
+            "id": 1,
+            "columnName": "test",
+            "Adderess": "Address Test",
+            "email": "test@gmail.com",
+            "mobile": "test"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fileName": "Bank Book",
+      "sheet": [
+        {
+          "id": 1,
+          "sheetName": "Bank Book sheet21",
+          "columns": {
+            "id": 1,
+            "columnName2": "test2",
+            "Adderess2": "Address Test2",
+            "email2": "test@gmail.com",
+            "mobile2": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Bank Book shee22",
+          "columns": {
+            "id": 1,
+            "columnName2": "test2",
+            "Adderess2": "Address Test2",
+            "email2": "test@gmail.com",
+            "mobile2": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Bank Book sheet23",
+          "columns": {
+            "id": 1,
+            "columnName2": "test2",
+            "Adderess2": "Address Test2",
+            "emai2": "test@gmail.com",
+            "mobile2": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Bank Book sheet24",
+          "columns": {
+            "id": 1,
+            "columnName2": "test2",
+            "Adderess2": "Address Test2",
+            "emai2": "test@gmail.com",
+            "mobile2": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Bank Booksheet25",
+          "columns": {
+            "id": 1,
+            "columnName2": "test2",
+            "Adderess2": "Address Test2",
+            "email2": "test@gmail.com",
+            "mobile2": "test"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fileName": "Cash Book",
+      "sheet": [
+        {
+          "id": 1,
+          "sheetName": "Cash Book sheet31",
+          "columns": {
+            "id": 1,
+            "columnName3": "test3",
+            "Adderess3": "Address Test3",
+            "email3": "test@gmail.com",
+            "mobile3": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Cash Book shee32",
+          "columns": {
+            "id": 1,
+            "columnName3": "test3",
+            "Adderess3": "Address Test3",
+            "email3": "test@gmail.com",
+            "mobile3": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Cash Book sheet33",
+          "columns": {
+            "id": 1,
+            "columnName3": "test3",
+            "Adderess3": "Address Test3",
+            "email3": "test@gmail.com",
+            "mobile3": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Cash Book sheet34",
+          "columns": {
+            "id": 1,
+            "columnName3": "test3",
+            "Adderess3": "Address Test3",
+            "email3": "test@gmail.com",
+            "mobile3": "test"
+          }
+        },
+        {
+          "id": 1,
+          "sheetName": "Cash Book sheet35",
+          "columns": {
+            "id": 1,
+            "columnName3": "test3",
+            "Adderess3": "Address Test3",
+            "email3": "test@gmail.com",
+            "mobile3": "test"
+          }
+        }
+      ]
+    }
+  ],
+  "ruledata": [
+    {
+      "ruleid": 2,
+      "rule": "BR1",
+      "ruleDescription": "Name Should contain Alphabets Characters only",
+      "valueField": "Name",
+      "valueCheck": "Not Null, Alphabetic",
+      "category": "customer",
+      "version": "1",
+      "isSelected": false
+    },
+    {
+      "ruleid": 3,
+      "rule": "BR2",
+      "ruleDescription": "Email Should contain @ and . special character",
+      "valueField": "Email",
+      "valueCheck": "@ & .",
+      "category": "customer",
+      "version": "2",
+      "isSelected": false
+    },
+    {
+      "ruleid": 4,
+      "rule": "BR3",
+      "ruleDescription": "Mobile Number Should Conatin 10 digits",
+      "valueField": "Mobile",
+      "valueCheck": "Phone Number length = 10",
+      "category": "customer",
+      "version": "3",
+      "isSelected": false
+    },
+    {
+      "ruleid": 5,
+      "rule": "Length",
+      "ruleDescription": "Name Should contain AlphNumeric Characters only",
+      "valueField": "Zip Code",
+      "valueCheck": "Zip Code length = 6",
+      "category": "customer",
+      "version": "4",
+      "isSelected": false
+    },
+    {
+      "ruleid": 6,
+      "rule": "Distinct",
+      "ruleDescription": "Distinct Should contain AlphNumeric Characters only",
+      "valueField": "Zip Code",
+      "valueCheck": "Zip Code length = 6",
+      "category": "customer",
+      "version": "4",
+      "isSelected": false
+    },
+    {
+      "ruleid": 7,
+      "rule": "Address",
+      "ruleDescription": "Address Should contain AlphNumeric Characters only",
+      "valueField": "Zip Code",
+      "valueCheck": "Zip Code length = 6",
+      "category": "customer",
+      "version": "4",
+      "isSelected": false
+    }
+  ],
+  "ruledata1": [
+    {
+      "ruleid": null,
+      "rule": "BR2",
+      "ruleDescription": "Email Should contain @ and . special character",
+      "valueField": "Email1",
+      "valueCheck": "@ & .1",
+      "category": "customer1",
+      "version": "21",
+      "isSelected": false,
+      "id": 2
+    },
+    {
+      "ruleid": null,
+      "rule": "Mobile",
+      "ruleDescription": "Mobile",
+      "valueField": "Mobile",
+      "valueCheck": "max length 10",
+      "category": "customer",
+      "version": "1",
+      "isSelected": false,
+      "id": 3
+    },
+    {
+      "ruleid": null,
+      "rule": "Number",
+      "ruleDescription": "Number",
+      "valueField": "Number",
+      "valueCheck": "only allow numbers",
+      "category": "customer",
+      "version": "1",
+      "isSelected": false,
+      "id": 4
+    }
+  ]
+}

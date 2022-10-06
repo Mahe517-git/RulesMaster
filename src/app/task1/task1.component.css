@@ -1,0 +1,55 @@
+option{
+    padding: 10px !important;
+}
+ul{
+    height: 200px !important;
+    overflow:scroll !important;
+    min-height: 435px !important;
+    border-radius: 0px !important; 
+}
+
+input[type=text]{
+    border-radius: 0px !important;  
+}
+
+li{
+    padding: 10px !important;
+    list-style: none !important;
+}
+
+select{
+    min-height: 450px !important;
+    border-radius: 0px !important;
+}
+
+.column{
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: rgb(238, 232, 232);
+    padding: 20px !important;
+    min-height:400px !important;
+  }
+  label{
+      padding: 5px !important;
+  }
+  .dev-listBox{
+      margin-left:65px !important;
+  }
+  .gray{
+    color:gray;
+  }
+  .ml-93{
+    margin-left: 93px;
+  }
+  .mtl-4{
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+  .text-primary{
+    font-size: 15px;
+    color: rgb(11, 94, 157);
+    font-weight: 500;
+  }
+  .ml-70{
+    margin-left: 70px;
+  }

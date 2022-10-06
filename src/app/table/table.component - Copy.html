@@ -1,0 +1,149 @@
+<div class="container">
+    <div class="filters">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="usr">Invoice No *</label>
+                    <input type="text" class="form-control greenInput">
+                </div>
+            </div>
+            <!-- <div class="col-md-2">
+                <div class="form-group">
+                    <label for="usr">Invoice Amount *</label>
+                    <input type="text" class="form-control greenInput">
+                </div>
+            </div> -->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="Currence">Invoice Currence *</label>
+                    <select class="form-select greenInput" id="Currence">
+                      <option>Rurees</option>
+                      <option>Dollars</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="usr">Invoice Date *</label>
+                    <input type="date" class="form-control greenInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="Currence">Incoterm *</label>
+                    <select class="form-select orangeInput" id="Incoterm">
+                      <option>Rurees</option>
+                      <option>Dollars</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="usr">Invoice Net Mass *</label>
+                    <input type="text" class="form-control orangeInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group selectInput">
+                    <label>Net Mass Unit *</label>
+                    <select class="form-select orangeInput" >
+                      <option>Rurees</option>
+                      <option>Dollars</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tableData">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+             
+                            <th>Title</th>
+             
+                            <th>Body</th>
+                        </tr>
+                    </thead>
+             
+                    <tbody>
+                        <tr *ngFor="let post of posts">
+                            <td>{{ post.id }}</td>
+             
+                            <td>{{ post.title }}</td>
+             
+                            <td>{{ post.body }}</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <!-- <th><input type="checkbox" [checked]="isSelectedAll === true" (change)="selectAll($event.target.checked)" /></th> -->
+                            <th><input type="checkbox" [checked]="isSelectedAll === true" (change)="selectAll($event)" /></th>              
+                            <th>Sl No.</th>
+                            <th>Product Code</th>
+                            <th style="width: 200px;">Country of Origin</th>
+                            <th>Decs of Goods</th>
+                            <th>Commodity Code</th>
+                            <th>Quality</th>
+                            <th>Package Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngIf="isDisplayRow == true">
+                            <td style="padding: 15px 0.5rem;"><input type="checkbox"/></td>
+                            <td><input type="text" class="form-control" id="newAttributeSno" [(ngModel)]="newAttribute.sno" name="newAttributeSno" ></td>
+                            <td><input type="text" class="form-control" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode"></td>
+                            <td>
+                                <select class="form-select"  id="newAttributeContry" [(ngModel)]="newAttribute.contry" name="newAttributeContry">
+                                    <option value="India">India</option>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control" id="newAttributeGoods" [(ngModel)]="newAttribute.goods" name="newAttributeGoods"></td>
+                            <td><input type="text" class="form-control" id="newAttributeCommodity" [(ngModel)]="newAttribute.commodity" name="newAttributeCommodity"></td>
+                            <td><input type="text" class="form-control" id="newAttributeQuality" [(ngModel)]="newAttribute.quality" name="newAttributeQuality"></td>
+                            <td><input type="text" class="form-control" id="newAttributePackageType" [(ngModel)]="newAttribute.packageType" name="newAttributePackageType"></td>
+                        </tr> -->
+                        <tr *ngFor="let field of fieldArray; let i = index">
+                            <!-- <td><input type="checkbox" (change)="checkCheckBoxvalue(1, $event.target.checked)" [checked]="isSelectAll == true"/></td> -->
+                            <td style="padding: 18px 0.5rem;border-left: 3px solid #00af2c;" *ngIf="field.status == 'Active'"><input type="checkbox" (change)="checkCheckBoxvalue($event, field?.sno)" [checked]="isSelectAll == true"/></td>
+                            <td style="padding: 18px 0.5rem;border-left: 3px solid #f8b149;" *ngIf="field.status != 'Active'"><input type="checkbox" (change)="checkCheckBoxvalue($event, field?.sno)" [checked]="isSelectAll == true"/></td>
+                            <td><input type="text" class="form-control" [(ngModel)]="field.sno" name="{{field.sno}}"></td>
+                            <td><input type="text" class="form-control" [(ngModel)]="field.code" name="{{field.code}}"></td>
+                            <td>
+                                <select class="form-select"  [(ngModel)]="field.contry" name="{{field.contry}}">
+                                    <option>India</option>
+                                    <option>USA</option>
+                                    <option>UK</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control" [(ngModel)]="field.goods" name="{{field.goods}}"></td>
+                            <td><input type="text" class="form-control" [(ngModel)]="field.commodity" name="{{field.commodity}}"></td>
+                            <td><input type="text" class="form-control" [(ngModel)]="field.quality" name="{{field.quality}}"></td>
+                            <td><input type="text" class="form-control" [(ngModel)]="field.packageType" name="{{field.packageType}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixedBox">
+    <div class="container">
+        <div class="row" style="    align-items: center;">
+            <div class="col-md-6">
+                <p style="color: #a6a8a9; margin-bottom: 0;">Fields marked with * are mandetory</p>
+            </div>
+            <div class="col-md-6" style="text-align: right;">
+                <button type="button" class="btn btn-primary" (click)="addFieldValue()">Add Row Above</button>
+                <button type="button" class="btn btn-primary" (click)="deleteFieldValue()">Delete Row</button>
+            </div>
+        </div>
+    </div>
+</div>
