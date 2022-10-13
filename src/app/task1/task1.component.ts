@@ -201,6 +201,18 @@ export class Task1Component implements OnInit, AfterContentInit {
     console.log(payload)
   }
 
+  // submit1() {
+  //   let payload = {
+  //     "selectFileName": this.selectedFileName,
+  //     "selectedSheet": this.selectedSheet,
+  //     "selectedColumns": this.selectedColumns,
+  //     ColumnsLevelRules:[{column:Address,roles:[1,2,3]}]
+  //   }
+  //   console.log(payload)
+  // }
+
+
+
   goToDQ(){
     let payload = {
       "selectFileName": this.selectedFileName,

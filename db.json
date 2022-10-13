@@ -296,6 +296,72 @@
       "version": "1",
       "isSelected": false,
       "id": 4
+    },
+    {
+      "ruleid": null,
+      "rule": "newRow",
+      "ruleDescription": "newRow",
+      "valueField": "newRow1",
+      "valueCheck": "@ & .1",
+      "category": "new1",
+      "version": "21",
+      "isSelected": false,
+      "id": 5
+    },
+    {
+      "ruleid": null,
+      "rule": "mobile",
+      "ruleDescription": "mobile",
+      "valueField": "mobile",
+      "valueCheck": "2",
+      "category": "customer",
+      "version": "2",
+      "isSelected": false,
+      "id": 6
+    },
+    {
+      "ruleid": null,
+      "rule": "mobil2",
+      "ruleDescription": "mobil2",
+      "valueField": "mobil2",
+      "valueCheck": "&&",
+      "category": "customer",
+      "version": "1",
+      "isSelected": false,
+      "id": 7
+    },
+    {
+      "ruleid": null,
+      "rule": "test",
+      "ruleDescription": "test",
+      "valueField": "test",
+      "valueCheck": "2",
+      "category": "customer1",
+      "version": "1",
+      "isSelected": false,
+      "id": 8
+    },
+    {
+      "ruleid": null,
+      "rule": "test2",
+      "ruleDescription": "test2",
+      "valueField": "test2",
+      "valueCheck": "@ & .1",
+      "category": "test2",
+      "version": "test3",
+      "isSelected": false,
+      "id": 9
+    },
+    {
+      "ruleid": null,
+      "rule": "123",
+      "ruleDescription": "123",
+      "valueField": "123",
+      "valueCheck": "123",
+      "category": "123",
+      "version": "123",
+      "isSelected": false,
+      "id": 10
     }
   ]
 }

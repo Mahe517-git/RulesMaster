@@ -254,11 +254,11 @@ export class TableComponent implements OnInit, AfterContentInit {
 
       if (this.formAddRule.valid) {
          this.data.saveRule(payload).subscribe(res => {
-            this.formAddRule.controls.valueField.patchValue('');
+            this.formAddRule.reset();
+            this.submited = false;
             this.formAddRule.controls.category.patchValue('customer');
-            this.formAddRule.controls.version.patchValue('');
-            this.formAddRule.controls.valueCheck.patchValue('');
             this.loadRules();
+            this.isDisplayRow=false;
             this.toastr.success("Rule saved successfully.")
          });
         // this.isDisplayRow=false;
@@ -303,6 +303,7 @@ export class TableComponent implements OnInit, AfterContentInit {
 
    cancelAdd(){
       this.isDisplayRow=false;
+      this.submited = false;
    }
 
    ruleUpdate(i:number,item:any){

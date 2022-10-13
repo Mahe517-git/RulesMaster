@@ -37,7 +37,7 @@
         <div class="col-md-3 pb-4">
                <div class="d-flex">
                 <label class="">Column Name </label>
-                <input type="checkbox" [checked]="isChekedAll" class="ml-93"
+                <input type="checkbox" [checked]="isChekedAll" class="ml-93" [disabled]="columns.length==0"
                   (change)="onClickAll($event.target)"><span class="mtl-4">Select All</span>
                </div>
                 <div>
@@ -59,7 +59,7 @@
         <div class="col-md-3 pb-4">
             <div class="d-flex">
             <label class="">File Level Maping</label>
-            <input type="checkbox" [checked]="isChekedAllRules" class="ml-70"
+            <input type="checkbox" [checked]="isChekedAllRules" class="ml-70" [disabled]="ruledata.length==0"
                             (change)="onClickAllRules($event.target)">
                             <span class="mtl-4">Select All</span>
                         </div>
@@ -88,8 +88,8 @@
 
     <div class="row">
         <div class="d-flex justify-content-end">
-            <button class="btn btn-sm btn-primary mx-3" (click)="goToDQ()">Map Rule in column level</button>
-            <button class="btn btn-sm btn-primary" (click)="submit()">Submit</button>
+            <button class="btn btn-sm btn-primary mx-3" (click)="goToDQ()" [disabled]="selectedColumns.length==0 || selectedRules.length==0">Map Rule in column level</button>
+            <button class="btn btn-sm btn-primary" (click)="submit()" [disabled]="selectedColumns.length==0 || selectedRules.length==0">Submit</button>
         </div>
     </div>
 </div>
