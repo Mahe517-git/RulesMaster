@@ -12,7 +12,7 @@
     bottom: 0;
     width: 100%;background: #fff;
 }
-.btn-primary{ border-radius: 0; margin-left: 10px; border: 1px ;width: 55px; padding:5px;}
+.btn-primary{ border-radius: 0; margin-left: 10px; border: 1px ; padding:5px;}
 .form-control, .form-select{height: 45px;border-radius: 0;}
 .chip {
     display: inline-block;
@@ -47,7 +47,7 @@
   color: #fff;
   padding: 5px;
   border-radius: 52px;
-  font-size: 12px;}
+  font-size: 10px;}
 
   .modal-content{
     height: 100vh; 

@@ -17,6 +17,7 @@ export class TableComponent implements OnInit, AfterContentInit {
 
    isSelectAll: boolean = false;
    title = 'dataTableDemo';
+   selectedRule:boolean=false;
 
    dtOptions: DataTables.Settings = {};
    posts: any;
@@ -76,6 +77,7 @@ export class TableComponent implements OnInit, AfterContentInit {
       this.loadRules();
       this.data.behaviorSubject.subscribe((res: any) => {
          this.selectedDataColumns = res;
+         console.log(this.selectedDataColumns)
          this.selectedDataColumns.selectedColumns.forEach((item: any) => {
             var obj = {
                "id": null,
@@ -85,7 +87,7 @@ export class TableComponent implements OnInit, AfterContentInit {
             }
             this.attribute.push(obj);
          });
-         // console.log(this.attribute)
+          console.log(this.attribute)
       })
 
 
@@ -190,15 +192,7 @@ export class TableComponent implements OnInit, AfterContentInit {
          this.attribute[index].chipsList.push(item);
       })
 
-      //console.log("this.attribute", this.attribute);
-      // for (var i in this.attribute) {
-      //    if (this.attribute[i].id == this.selectedData.id) {
-      //       this.attribute[i].mappedRule = this.checkedList;
-      //       break; //Stop this loop, we found it!
-      //    }
-      // }
-
-
+      this.disabledSubmit();
       this.mainService.tooggleModal('information_modal', 'hide');
    }
 
@@ -241,6 +235,17 @@ export class TableComponent implements OnInit, AfterContentInit {
    submited: boolean = false;
    addRule() {
       this.submited = true;
+
+     let duplicate= this.ruledata.filter((item:any)=>
+     item.valueField===this.formAddRule.value.valueField ||
+     item.valueCheck===this.formAddRule.value.valueCheck);
+     
+     if(duplicate.length>0){
+      this.toastr.warning("Rule alredy exists.")
+      return
+     }
+
+
       const payload= {
          ruleid: null,
          rule: this.formAddRule.value.valueField,
@@ -261,8 +266,6 @@ export class TableComponent implements OnInit, AfterContentInit {
             this.isDisplayRow=false;
             this.toastr.success("Rule saved successfully.")
          });
-        // this.isDisplayRow=false;
-
       }
    }
 
@@ -359,4 +362,25 @@ export class TableComponent implements OnInit, AfterContentInit {
          this.loadRules();
        })
    }
+
+   disabledSubmit(){
+     this.selectedRule= this.attribute.find((item:any)=>{
+     if(item['mappedRule'].length>0){
+        return true;
+     }
+     return false;
+   })
+}
+
+
+submit(){
+ var  payload= {
+           fileLevel:this.selectedDataColumns,
+            columnLevel:this.attribute
+        }
+        console.log(payload)
+}
+
+ 
+
 }

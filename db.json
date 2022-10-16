@@ -266,17 +266,6 @@
   "ruledata1": [
     {
       "ruleid": null,
-      "rule": "BR2",
-      "ruleDescription": "Email Should contain @ and . special character",
-      "valueField": "Email1",
-      "valueCheck": "@ & .1",
-      "category": "customer1",
-      "version": "21",
-      "isSelected": false,
-      "id": 2
-    },
-    {
-      "ruleid": null,
       "rule": "Mobile",
       "ruleDescription": "Mobile",
       "valueField": "Mobile",
@@ -343,17 +332,6 @@
     },
     {
       "ruleid": null,
-      "rule": "test2",
-      "ruleDescription": "test2",
-      "valueField": "test2",
-      "valueCheck": "@ & .1",
-      "category": "test2",
-      "version": "test3",
-      "isSelected": false,
-      "id": 9
-    },
-    {
-      "ruleid": null,
       "rule": "123",
       "ruleDescription": "123",
       "valueField": "123",
@@ -362,6 +340,17 @@
       "version": "123",
       "isSelected": false,
       "id": 10
+    },
+    {
+      "ruleid": null,
+      "rule": "Mobile3",
+      "ruleDescription": "Mobile3",
+      "valueField": "Mobile3",
+      "valueCheck": "21",
+      "category": "customer",
+      "version": "1",
+      "isSelected": false,
+      "id": 11
     }
   ]
 }
